@@ -1,0 +1,147 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2.5rem;
+  background-color: rgba(1, 7, 19, 0.85);
+  border-bottom: 1px solid rgba(240, 168, 21, 0.3);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ====== LOGO ====== */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.header-left:hover {
+  opacity: 0.85;
+}
+
+.header-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(240, 168, 21, 0.6));
+}
+
+.logo-text {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.logo-accent {
+  color: #F0A815;
+  margin-left: 2px;
+}
+
+/* ====== NAVEGACIÓN ====== */
+.header-nav {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-link {
+  position: relative;
+  color: #c5cad6;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #F0A815;
+}
+
+/* Estado activo (página actual) */
+.nav-link.active {
+  color: #F0A815;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #F0A815,
+    transparent
+  );
+  box-shadow: 0 0 8px rgba(240, 168, 21, 0.6);
+}
+
+/* ====== BOTÓN PONERSE EN CONTACTO ====== */
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #FFC447 0%, #F0A815 100%);
+  color: #0a0e1a;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(240, 168, 21, 0.4);
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(240, 168, 21, 0.6);
+  background: linear-gradient(135deg, #FFD166 0%, #F0A815 100%);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .header-nav {
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.78rem;
+  }
+
+  .btn-contact {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+
+  .header-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+}

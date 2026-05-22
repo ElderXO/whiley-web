@@ -1,0 +1,295 @@
+.sla-section {
+  padding: 3rem 2rem 5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ====== ENCABEZADO ====== */
+.sla-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sla-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #F0A815;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(240, 168, 21, 0.3);
+}
+
+.sla-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.sla-title .accent {
+  color: #F0A815;
+  text-shadow: 0 0 20px rgba(240, 168, 21, 0.4);
+}
+
+.sla-subtitle {
+  font-size: 1rem;
+  color: #c5cad6;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ====== GRID DEFINICIONES (4 cards) ====== */
+.definitions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.definition-card {
+  padding: 1.8rem;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 18, 35, 0.6) 0%,
+    rgba(1, 7, 19, 0.9) 100%
+  );
+  border: 1px solid rgba(240, 168, 21, 0.2);
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.definition-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #F0A815,
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.definition-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(240, 168, 21, 0.5);
+  box-shadow:
+    0 10px 30px rgba(240, 168, 21, 0.15),
+    0 0 20px rgba(240, 168, 21, 0.1);
+}
+
+/* Header de cada definition card */
+.definition-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.2rem;
+}
+
+.definition-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 168, 21, 0.15),
+    rgba(255, 196, 71, 0.05)
+  );
+  border: 1.5px solid rgba(240, 168, 21, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 15px rgba(240, 168, 21, 0.2),
+    inset 0 0 8px rgba(240, 168, 21, 0.1);
+  transition: all 0.4s ease;
+}
+
+.definition-card:hover .definition-icon-wrapper {
+  box-shadow:
+    0 0 20px rgba(240, 168, 21, 0.4),
+    inset 0 0 12px rgba(240, 168, 21, 0.2);
+}
+
+.definition-icon {
+  color: #F0A815;
+}
+
+.definition-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+/* Lista de items */
+.definition-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.definition-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #c5cad6;
+  line-height: 1.55;
+  align-items: flex-start;
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F0A815;
+  box-shadow: 0 0 6px rgba(240, 168, 21, 0.6);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ====== SUBHEADER DE SLA ====== */
+.sla-subheader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sla-subtitle-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0.8rem;
+}
+
+/* ====== GRID SLA (2 cards) ====== */
+.sla-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.sla-card {
+  padding: 2rem;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 168, 21, 0.05) 0%,
+    rgba(1, 7, 19, 0.7) 60%
+  );
+  border: 1px solid rgba(240, 168, 21, 0.3);
+  border-radius: 14px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Línea decorativa lateral */
+.sla-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #F0A815,
+    transparent
+  );
+  box-shadow: 0 0 8px rgba(240, 168, 21, 0.5);
+}
+
+.sla-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240, 168, 21, 0.6);
+  box-shadow:
+    0 10px 30px rgba(240, 168, 21, 0.2),
+    0 0 25px rgba(240, 168, 21, 0.1);
+}
+
+.sla-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.3rem;
+}
+
+.sla-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 168, 21, 0.2),
+    rgba(255, 196, 71, 0.05)
+  );
+  border: 1.5px solid rgba(240, 168, 21, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 18px rgba(240, 168, 21, 0.25),
+    inset 0 0 10px rgba(240, 168, 21, 0.1);
+}
+
+.sla-icon {
+  color: #F0A815;
+}
+
+.sla-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.sla-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sla-list li {
+  font-size: 0.92rem;
+  color: #c5cad6;
+  line-height: 1.55;
+  padding-left: 14px;
+  border-left: 2px solid rgba(240, 168, 21, 0.25);
+}
+
+.sla-list li strong {
+  color: #F0A815;
+  font-weight: 600;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .definitions-grid,
+  .sla-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sla-title {
+    font-size: 1.7rem;
+  }
+
+  .sla-section {
+    padding: 2rem 1.2rem 3rem;
+  }
+}

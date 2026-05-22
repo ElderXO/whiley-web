@@ -1,0 +1,36 @@
+.sphere-container {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+/* Halo de resplandor detrás de la esfera */
+.sphere-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(74, 158, 255, 0.15) 0%,
+    rgba(212, 165, 71, 0.08) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.sphere-container canvas {
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}

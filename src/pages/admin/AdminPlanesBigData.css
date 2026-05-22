@@ -1,0 +1,357 @@
+.admin-bigdata {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.bigdata-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bigdata-admin-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin: 0 0 0.4rem 0;
+}
+
+.bigdata-admin-header h1 svg {
+  color: #4a9eff;
+}
+
+.bigdata-admin-header p {
+  color: #8a8f9b;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* Boton principal */
+.btn-primary-bd {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.8rem 1.4rem;
+  background: linear-gradient(135deg, #6db4ff, #4a9eff);
+  color: #0a0e1a;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 158, 255, 0.3);
+}
+
+.btn-primary-bd:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 158, 255, 0.5);
+}
+
+.btn-primary-bd:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary-bd {
+  padding: 0.8rem 1.4rem;
+  background: transparent;
+  border: 1px solid rgba(74, 158, 255, 0.4);
+  border-radius: 10px;
+  color: #4a9eff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-bd:hover {
+  background: rgba(74, 158, 255, 0.1);
+}
+
+/* TABLA */
+.bigdata-admin-table-wrapper {
+  background: linear-gradient(180deg, rgba(10, 30, 60, 0.6) 0%, rgba(1, 7, 19, 0.9) 100%);
+  border: 1px solid rgba(74, 158, 255, 0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.bigdata-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bigdata-admin-table thead {
+  background: rgba(74, 158, 255, 0.08);
+  border-bottom: 1px solid rgba(74, 158, 255, 0.3);
+}
+
+.bigdata-admin-table th {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4a9eff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.bigdata-admin-table tbody tr {
+  border-bottom: 1px solid rgba(74, 158, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.bigdata-admin-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.bigdata-admin-table tbody tr:hover {
+  background: rgba(74, 158, 255, 0.05);
+}
+
+.bigdata-admin-table tbody tr.row-popular-admin {
+  background: linear-gradient(90deg, rgba(74, 158, 255, 0.08), rgba(74, 158, 255, 0.02));
+}
+
+.bigdata-admin-table td {
+  padding: 1rem 1.2rem;
+  color: #c5cad6;
+  font-size: 0.92rem;
+  vertical-align: middle;
+}
+
+/* Celda del nombre */
+.plan-name-admin-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plan-name-admin-cell strong {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.popular-badge-admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: linear-gradient(135deg, #6db4ff, #4a9eff);
+  color: #0a0e1a;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 999px;
+}
+
+.precio-admin-bd {
+  color: #4a9eff !important;
+  font-size: 1rem;
+}
+
+/* Acciones */
+.acciones-bd {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-icon-bd {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(74, 158, 255, 0.2);
+  background: rgba(1, 7, 19, 0.5);
+  color: #c5cad6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-icon-bd:hover {
+  transform: translateY(-2px);
+}
+
+.btn-pop:hover {
+  background: rgba(74, 158, 255, 0.15);
+  border-color: #4a9eff;
+  color: #4a9eff;
+}
+
+.btn-edit-bd:hover {
+  background: rgba(74, 158, 255, 0.15);
+  border-color: #4a9eff;
+  color: #4a9eff;
+}
+
+.btn-del-bd:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* ESTADOS */
+.bigdata-admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  color: #c5cad6;
+}
+
+.bigdata-admin-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(10, 30, 60, 0.4);
+  border: 1px dashed rgba(74, 158, 255, 0.3);
+  border-radius: 14px;
+}
+
+.bigdata-admin-empty svg {
+  color: rgba(74, 158, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.bigdata-admin-empty h3 {
+  color: #c5cad6;
+  margin: 0 0 0.5rem;
+}
+
+.bigdata-admin-empty p {
+  color: #8a8f9b;
+}
+
+.bigdata-admin-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 1.2rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 10px;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+/* FORM GRID DEL MODAL */
+.form-grid-bd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-field-bd {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-bd-full {
+  grid-column: 1 / -1;
+}
+
+.form-field-bd label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a9eff;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+.form-field-bd input[type="text"],
+.form-field-bd input[type="number"] {
+  padding: 0.85rem 1rem;
+  background: rgba(1, 7, 19, 0.6);
+  border: 1px solid rgba(74, 158, 255, 0.25);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-field-bd input:focus {
+  outline: none;
+  border-color: #4a9eff;
+  box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+}
+
+.form-field-bd input::placeholder {
+  color: #6c7280;
+}
+
+.form-checkbox-bd {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 10px;
+  cursor: pointer;
+  color: #c5cad6 !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.form-checkbox-bd input {
+  display: none;
+}
+
+.form-checkbox-bd span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.checkbox-custom-bd {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(74, 158, 255, 0.4);
+  border-radius: 5px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: rgba(1, 7, 19, 0.6);
+  transition: all 0.3s ease;
+}
+
+.form-checkbox-bd input:checked + .checkbox-custom-bd {
+  background: linear-gradient(135deg, #6db4ff, #4a9eff);
+  border-color: #4a9eff;
+}
+
+.form-checkbox-bd input:checked + .checkbox-custom-bd::after {
+  content: '';
+  width: 6px;
+  height: 10px;
+  border: solid #0a0e1a;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .form-grid-bd {
+    grid-template-columns: 1fr;
+  }
+
+  .bigdata-admin-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .bigdata-admin-table {
+    min-width: 700px;
+  }
+}

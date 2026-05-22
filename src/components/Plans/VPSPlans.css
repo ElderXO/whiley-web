@@ -1,0 +1,331 @@
+/* ====== SECCION VPS ====== */
+.vps-plans-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, #050c1c 0%, #0a1530 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.vps-plans-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(77, 196, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ====== HEADER ====== */
+.vps-header {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.vps-eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(77, 196, 255, 0.1);
+  border: 1px solid rgba(77, 196, 255, 0.3);
+  border-radius: 999px;
+  color: #4dc4ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 1.2rem;
+}
+
+.vps-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1rem;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.accent-cyan {
+  color: #4dc4ff;
+  text-shadow: 0 0 25px rgba(77, 196, 255, 0.4);
+}
+
+.vps-subtitle {
+  font-size: 1.05rem;
+  color: #c5cad6;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ====== GRID DE CARDS ====== */
+.vps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vps-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2.2rem 1.8rem;
+  background: linear-gradient(180deg, rgba(10, 30, 60, 0.6) 0%, rgba(1, 7, 19, 0.9) 100%);
+  border: 1px solid rgba(77, 196, 255, 0.2);
+  border-radius: 16px;
+  transition: all 0.4s ease;
+}
+
+.vps-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(77, 196, 255, 0.5);
+  box-shadow: 0 15px 40px rgba(77, 196, 255, 0.15);
+}
+
+/* CARD DESTACADA */
+.vps-card.featured-vps {
+  border-color: rgba(77, 196, 255, 0.6);
+  background: linear-gradient(180deg, rgba(77, 196, 255, 0.08) 0%, rgba(1, 7, 19, 0.9) 100%);
+  box-shadow: 0 8px 30px rgba(77, 196, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.featured-badge-vps {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #6dd5ff, #4dc4ff);
+  color: #0a0e1a;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(77, 196, 255, 0.5);
+  white-space: nowrap;
+}
+
+/* Icono */
+.vps-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(77, 196, 255, 0.2), rgba(77, 196, 255, 0.05));
+  border: 1px solid rgba(77, 196, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.vps-icon {
+  color: #4dc4ff;
+  filter: drop-shadow(0 0 8px rgba(77, 196, 255, 0.5));
+}
+
+/* Nombre y tagline */
+.vps-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.3rem;
+}
+
+.vps-tagline {
+  font-size: 0.88rem;
+  color: #8a8f9b;
+  margin: 0 0 1.5rem;
+  line-height: 1.4;
+}
+
+/* Precio */
+.vps-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(77, 196, 255, 0.1);
+}
+
+.vps-currency {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4dc4ff;
+}
+
+.vps-amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.vps-period {
+  font-size: 0.85rem;
+  color: #8a8f9b;
+  margin-left: 4px;
+}
+
+/* Features */
+.vps-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+
+.vps-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #c5cad6;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.vps-features li svg {
+  color: #4dc4ff;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Boton */
+.vps-btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: transparent;
+  border: 1.5px solid rgba(77, 196, 255, 0.4);
+  border-radius: 10px;
+  color: #4dc4ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.vps-btn:hover {
+  background: linear-gradient(135deg, #6dd5ff, #4dc4ff);
+  color: #0a0e1a;
+  border-color: #4dc4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(77, 196, 255, 0.4);
+}
+
+.vps-card.featured-vps .vps-btn {
+  background: linear-gradient(135deg, #6dd5ff, #4dc4ff);
+  color: #0a0e1a;
+  border-color: #4dc4ff;
+  box-shadow: 0 6px 18px rgba(77, 196, 255, 0.4);
+}
+
+.vps-card.featured-vps .vps-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(77, 196, 255, 0.6);
+}
+
+/* ====== ESTADOS DE CARGA Y ERROR ====== */
+.planes-loading-state,
+.planes-error-state {
+  text-align: center;
+  padding: 6rem 2rem;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.planes-loading-state p {
+  color: #c5cad6;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.planes-error-state svg {
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+}
+
+.planes-error-state h3 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.planes-error-state p {
+  color: #c5cad6;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.btn-retry-vps {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #6dd5ff, #4dc4ff);
+  color: #0a0e1a;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.btn-retry-vps:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(77, 196, 255, 0.4);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .vps-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vps-plans-section {
+    padding: 3rem 1rem;
+  }
+
+  .vps-title {
+    font-size: 1.8rem;
+  }
+
+  .vps-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .vps-card {
+    padding: 1.8rem 1.4rem;
+  }
+}

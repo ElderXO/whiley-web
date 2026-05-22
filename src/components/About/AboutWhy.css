@@ -1,0 +1,254 @@
+.about-why-section {
+  padding: 4rem 2rem 5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.about-why-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ====== VISUAL IZQUIERDA ====== */
+.about-why-visual {
+  position: relative;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-card {
+  position: absolute;
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 168, 21, 0.1) 0%,
+    rgba(1, 7, 19, 0.9) 100%
+  );
+  border: 1px solid rgba(240, 168, 21, 0.4);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(240, 168, 21, 0.2);
+}
+
+.visual-card-1 {
+  top: 15%;
+  left: 10%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: floatA 4s ease-in-out infinite;
+}
+
+.visual-card-2 {
+  bottom: 15%;
+  right: 10%;
+  text-align: center;
+  animation: floatB 4s ease-in-out infinite 0.5s;
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
+}
+
+.visual-icon {
+  color: #F0A815;
+  filter: drop-shadow(0 0 10px rgba(240, 168, 21, 0.6));
+}
+
+.visual-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.visual-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #F0A815;
+  line-height: 1;
+}
+
+.visual-label {
+  font-size: 0.78rem;
+  color: #c5cad6;
+  margin-top: 2px;
+}
+
+.visual-percent {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #F0A815;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(240, 168, 21, 0.5);
+}
+
+.visual-percent-label {
+  font-size: 0.78rem;
+  color: #c5cad6;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Órbita decorativa */
+.visual-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  border: 1px dashed rgba(240, 168, 21, 0.3);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.visual-orbit::before,
+.visual-orbit::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #F0A815;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(240, 168, 21, 0.8);
+}
+
+.visual-orbit::before {
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.visual-orbit::after {
+  bottom: -4px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+@keyframes rotate {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Glow central */
+.visual-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(240, 168, 21, 0.2) 0%,
+    transparent 70%
+  );
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+/* ====== CONTENIDO ====== */
+.about-why-content {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.about-why-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.about-why-title .accent {
+  color: #F0A815;
+  text-shadow: 0 0 20px rgba(240, 168, 21, 0.4);
+}
+
+.about-why-description {
+  font-size: 1rem;
+  color: #c5cad6;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+/* Beneficios en 2 columnas */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c5cad6;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.benefit-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFC447 0%, #F0A815 100%);
+  color: #0a0e1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(240, 168, 21, 0.4);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .about-why-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-why-visual {
+    height: 350px;
+  }
+
+  .about-why-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-card-1 { left: 5%; }
+  .visual-card-2 { right: 5%; }
+  .visual-orbit { width: 250px; height: 250px; }
+}

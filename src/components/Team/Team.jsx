@@ -2,13 +2,33 @@ import { useState, useEffect } from 'react'
 import { Loader, AlertCircle, User } from 'lucide-react'
 import './Team.css'
 
-// Helper: resolver la foto del miembro
+// Importar todas las fotos del equipo (Vite las procesa correctamente)
+import teamWilder from '../../assets/team-wilder.png'
+import teamLeyner from '../../assets/team-leyner.png'
+import teamAracely from '../../assets/team-aracely.png'
+import teamElmer from '../../assets/team-elmer.png'
+import teamMarco from '../../assets/team-marco.png'
+import teamJoaquin from '../../assets/team-joaquin.png'
+
+// Mapeo de fotos locales por nombre de archivo
+const fotosLocales = {
+  'team-wilder.png': teamWilder,
+  'team-leyner.png': teamLeyner,
+  'team-aracely.png': teamAracely,
+  'team-elmer.png': teamElmer,
+  'team-marco.png': teamMarco,
+  'team-joaquin.png': teamJoaquin
+}
+
+// Helper: resolver la foto (URL externa o local)
 const resolverFoto = (foto) => {
   if (!foto) return null
+  // Si es URL externa, usarla directa
   if (foto.startsWith('http://') || foto.startsWith('https://')) {
     return foto
   }
-  return `/src/assets/${foto}`
+  // Si es local, buscar en el mapa
+  return fotosLocales[foto] || null
 }
 
 // Helper: obtener iniciales del nombre
@@ -47,7 +67,6 @@ function Team() {
     }
   }
 
-  // Duplicamos el array para que el carrusel sea infinito y suave
   const duplicatedTeam = [...miembros, ...miembros]
 
   if (loading) {
@@ -95,7 +114,6 @@ function Team() {
         </p>
       </div>
 
-      {/* Carrusel infinito */}
       <div className="team-carousel">
         <div className="team-track">
           {duplicatedTeam.map((member, index) => {

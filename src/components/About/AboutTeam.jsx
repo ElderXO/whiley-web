@@ -2,16 +2,31 @@ import { useState, useEffect } from 'react'
 import { Loader, AlertCircle, User } from 'lucide-react'
 import './AboutTeam.css'
 
-// Helper: resolver la foto del miembro (URL externa o local)
+// Importar todas las fotos del equipo
+import teamWilder from '../../assets/team-wilder.png'
+import teamLeyner from '../../assets/team-leyner.png'
+import teamAracely from '../../assets/team-aracely.png'
+import teamElmer from '../../assets/team-elmer.png'
+import teamMarco from '../../assets/team-marco.png'
+import teamJoaquin from '../../assets/team-joaquin.png'
+
+const fotosLocales = {
+  'team-wilder.png': teamWilder,
+  'team-leyner.png': teamLeyner,
+  'team-aracely.png': teamAracely,
+  'team-elmer.png': teamElmer,
+  'team-marco.png': teamMarco,
+  'team-joaquin.png': teamJoaquin
+}
+
 const resolverFoto = (foto) => {
   if (!foto) return null
   if (foto.startsWith('http://') || foto.startsWith('https://')) {
     return foto
   }
-  return `/src/assets/${foto}`
+  return fotosLocales[foto] || null
 }
 
-// Helper: obtener iniciales del nombre
 const obtenerIniciales = (nombre) => {
   if (!nombre) return '?'
   const partes = nombre.trim().split(' ')
@@ -60,7 +75,6 @@ function AboutTeam() {
         </p>
       </div>
 
-      {/* Estados de carga / error / vacio */}
       {loading && (
         <div className="about-team-state">
           <Loader size={48} className="spin" style={{ color: '#F0A815' }} />
@@ -82,7 +96,6 @@ function AboutTeam() {
         </div>
       )}
 
-      {/* Grid 3x2 cuando hay datos */}
       {!loading && !error && miembros.length > 0 && (
         <div className="about-team-grid">
           {miembros.map((member, index) => {

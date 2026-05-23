@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import {
+  
   Users,
   Plus,
   Edit2,
@@ -13,7 +14,30 @@ import {
 } from 'lucide-react'
 import { equipoAPI } from '../../services/api'
 import './AdminEquipo.css'
+// Importar fotos del equipo
+import teamWilder from '../../assets/team-wilder.png'
+import teamLeyner from '../../assets/team-leyner.png'
+import teamAracely from '../../assets/team-aracely.png'
+import teamElmer from '../../assets/team-elmer.png'
+import teamMarco from '../../assets/team-marco.png'
+import teamJoaquin from '../../assets/team-joaquin.png'
 
+const fotosLocales = {
+  'team-wilder.png': teamWilder,
+  'team-leyner.png': teamLeyner,
+  'team-aracely.png': teamAracely,
+  'team-elmer.png': teamElmer,
+  'team-marco.png': teamMarco,
+  'team-joaquin.png': teamJoaquin
+}
+
+const resolverFotoAdmin = (foto) => {
+  if (!foto) return null
+  if (foto.startsWith('http://') || foto.startsWith('https://')) {
+    return foto
+  }
+  return fotosLocales[foto] || null
+}
 function AdminEquipo() {
   const [miembros, setMiembros] = useState([])
   const [loading, setLoading] = useState(true)
@@ -149,11 +173,7 @@ function AdminEquipo() {
               <div className="miembro-avatar">
                 {miembro.foto ? (
                   <img
-                    src={
-                      miembro.foto.startsWith('http')
-                        ? miembro.foto
-                        : `/src/assets/${miembro.foto}`
-                    }
+                    src={resolverFotoAdmin(miembro.foto)}
                     alt={miembro.nombre}
                     onError={(e) => {
                       e.target.style.display = 'none'
@@ -217,11 +237,7 @@ function AdminEquipo() {
                   <div className="foto-preview-circle">
                     {formData.foto ? (
                       <img
-                        src={
-                          formData.foto.startsWith('http')
-                            ? formData.foto
-                            : `/src/assets/${formData.foto}`
-                        }
+                        src={resolverFotoAdmin(formData.foto)}
                         alt="Preview"
                         onError={(e) => {
                           e.target.style.display = 'none'

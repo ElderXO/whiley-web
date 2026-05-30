@@ -1,27 +1,34 @@
 import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Send, User, Mail, MessageSquare, CheckCircle, Phone, Briefcase, AlertCircle } from 'lucide-react'
 import './ContactForm.css'
 
+const services = [
+  'Hosting SSD',
+  'VPS SSD',
+  'VPS Big Data',
+  'SAP BusinessObjects',
+  'Desarrollo a medida',
+  'Otra consulta'
+]
+
 function ContactForm() {
+  const [searchParams] = useSearchParams()
+
+  // Pre-selecciona el servicio si llega por la URL (?servicio=...) y es valido
+  const servicioParam = searchParams.get('servicio')
+  const servicioInicial = services.includes(servicioParam) ? servicioParam : ''
+
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
     telefono: '',
-    servicio: '',
+    servicio: servicioInicial,
     mensaje: ''
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-
-  const services = [
-    'Hosting SSD',
-    'VPS SSD',
-    'VPS Big Data',
-    'SAP BusinessObjects',
-    'Desarrollo a medida',
-    'Otra consulta'
-  ]
 
   const handleChange = (e) => {
     setFormData({

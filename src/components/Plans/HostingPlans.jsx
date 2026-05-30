@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Rocket, Zap, Gauge, Server, Check, Star, Loader, AlertCircle } from 'lucide-react'
 import './HostingPlans.css'
 
@@ -11,6 +12,7 @@ const iconosPorNombre = {
 }
 
 function HostingPlans() {
+  const navigate = useNavigate()
   const [planes, setPlanes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -133,7 +135,10 @@ function HostingPlans() {
                 <li><Check size={14} /> {sitiosNum} {labelSitios}</li>
               </ul>
 
-              <button className="plan-btn">
+              <button
+                className="plan-btn"
+                onClick={() => navigate(`/soporte?servicio=${encodeURIComponent('Hosting SSD')}#contacto`)}
+              >
                 Contratar plan
               </button>
             </article>

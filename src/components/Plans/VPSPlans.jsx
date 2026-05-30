@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Cpu, Zap, Rocket, Crown, Check, Star, Loader, AlertCircle, Server } from 'lucide-react'
 import './VPSPlans.css'
 
@@ -11,6 +12,7 @@ const iconosPorNombre = {
 }
 
 function VPSPlans() {
+  const navigate = useNavigate()
   const [planes, setPlanes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -113,7 +115,10 @@ function VPSPlans() {
                 <li><Check size={14} /> {plan.trafico} de tráfico</li>
               </ul>
 
-              <button className="vps-btn">
+              <button
+                className="vps-btn"
+                onClick={() => navigate(`/soporte?servicio=${encodeURIComponent('VPS SSD')}#contacto`)}
+              >
                 Contratar VPS
               </button>
             </article>

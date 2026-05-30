@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Database, Check, Star, Loader, AlertCircle } from 'lucide-react'
 import './BigDataPlans.css'
 
 function BigDataPlans() {
+  const navigate = useNavigate()
   const [planes, setPlanes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -107,7 +109,10 @@ function BigDataPlans() {
                   <span className="price-period-bd">/mes</span>
                 </td>
                 <td>
-                  <button className="bigdata-btn">
+                  <button
+                    className="bigdata-btn"
+                    onClick={() => navigate(`/soporte?servicio=${encodeURIComponent('VPS Big Data')}#contacto`)}
+                  >
                     Contratar
                   </button>
                 </td>

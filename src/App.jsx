@@ -28,16 +28,34 @@ import './App.css'
 function ScrollToHash() {
   const location = useLocation()
   useEffect(() => {
-    if (location.hash) {
-      const elementId = location.hash.replace('#', '')
-      setTimeout(() => {
-        const element = document.getElementById(elementId)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-      }, 100)
-    } else {
+    if (!location.hash) {
       window.scrollTo(0, 0)
+      return
+    }
+
+    const elementId = location.hash.replace('#', '')
+
+    const scrollToTarget = () => {
+      const element = document.getElementById(elementId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+
+    // Reposiciona cada vez que la altura del documento cambie
+    // (FAQ que termina de cargar, imagenes que llegan, etc.)
+    const observer = new ResizeObserver(() => scrollToTarget())
+    observer.observe(document.body)
+
+    // Intento inicial inmediato
+    scrollToTarget()
+
+    // Deja de corregir tras 1.5s, cuando el layout ya se estabilizo
+    const settleTimer = setTimeout(() => observer.disconnect(), 1500)
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(settleTimer)
     }
   }, [location])
   return null

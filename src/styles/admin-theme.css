@@ -1,0 +1,97 @@
+/* ===================================================
+   TOKENS DE TEMA DEL PANEL ADMINISTRATIVO
+   ---------------------------------------------------
+   Todas las variables estan scopeadas a `.admin-layout`,
+   por lo que NUNCA afectan a la web publica.
+
+   - Tema OSCURO  -> valores por defecto (`.admin-layout`)
+   - Tema CLARO   -> `.admin-layout[data-theme="light"]`
+
+   El tema oscuro replica exactamente los colores
+   originales del panel (cero cambio visual por defecto).
+   El tema claro usa una paleta corporativa: grises suaves
+   (sin blancos puros), texto navy de alto contraste y el
+   dorado de marca (#F0A815) como acento, oscurecido cuando
+   se usa como texto para mantener la legibilidad.
+   =================================================== */
+
+/* ============ TEMA OSCURO (por defecto) ============ */
+.admin-layout,
+.admin-layout[data-theme="dark"] {
+  /* Superficies */
+  --ad-bg: #0a1530;
+  --ad-sidebar: linear-gradient(180deg, #050c1c 0%, #010713 100%);
+  --ad-header: rgba(10, 21, 48, 0.8);
+  --ad-card: linear-gradient(180deg, rgba(10, 21, 48, 0.6) 0%, rgba(1, 7, 19, 0.8) 100%);
+  --ad-card-strong: linear-gradient(180deg, rgba(10, 21, 48, 0.7) 0%, rgba(1, 7, 19, 0.9) 100%);
+  --ad-card-soft: linear-gradient(180deg, rgba(10, 21, 48, 0.5) 0%, rgba(1, 7, 19, 0.7) 100%);
+  --ad-card-bd: linear-gradient(180deg, rgba(10, 30, 60, 0.6) 0%, rgba(1, 7, 19, 0.9) 100%);
+  --ad-card-highlight: linear-gradient(180deg, rgba(240, 168, 21, 0.08) 0%, rgba(1, 7, 19, 0.9) 100%);
+  --ad-modal: linear-gradient(180deg, #0a1530 0%, #050c1c 100%);
+  --ad-surface: #0a1530;
+  --ad-deep: #050c1c;
+  --ad-input: rgba(1, 7, 19, 0.6);
+  --ad-inset: rgba(1, 7, 19, 0.5);
+  --ad-empty: rgba(10, 21, 48, 0.4);
+  --ad-empty-bd: rgba(10, 30, 60, 0.4);
+  --ad-banner: linear-gradient(135deg, rgba(240, 168, 21, 0.15) 0%, rgba(10, 21, 48, 0.6) 100%);
+
+  /* Texto */
+  --ad-text: #ffffff;
+  --ad-text-muted: #c5cad6;
+  --ad-text-subtle: #8a8f9b;
+  --ad-text-faint: #6c7280;
+
+  /* Acentos como TEXTO/ICONO (legibles sobre el fondo del tema) */
+  --ad-accent-fg: #F0A815;
+  --ad-blue-fg: #4a9eff;
+  --ad-green-fg: #2ecc71;
+  --ad-purple-fg: #9b59b6;
+  --ad-red-fg: #ef4444;
+
+  /* Acentos como BORDE/punto (saturados en ambos temas) */
+  --ad-gold: #F0A815;
+  --ad-blue: #4a9eff;
+  --ad-green: #2ecc71;
+  --ad-red: #ef4444;
+}
+
+/* ================= TEMA CLARO ================= */
+.admin-layout[data-theme="light"] {
+  /* Superficies */
+  --ad-bg: #e7ebf2;
+  --ad-sidebar: linear-gradient(180deg, #f7f9fc 0%, #eef2f8 100%);
+  --ad-header: rgba(247, 249, 252, 0.85);
+  --ad-card: linear-gradient(180deg, #fcfdff 0%, #f3f6fb 100%);
+  --ad-card-strong: linear-gradient(180deg, #fdfeff 0%, #f1f5fa 100%);
+  --ad-card-soft: linear-gradient(180deg, #fbfcfe 0%, #f4f7fb 100%);
+  --ad-card-bd: linear-gradient(180deg, #f4f9ff 0%, #ebf3fc 100%);
+  --ad-card-highlight: linear-gradient(180deg, rgba(240, 168, 21, 0.14) 0%, #f4f7fb 100%);
+  --ad-modal: linear-gradient(180deg, #fcfdff 0%, #f2f5fb 100%);
+  --ad-surface: #fbfcff;
+  --ad-deep: #e2e8f1;
+  --ad-input: #eef2f8;
+  --ad-inset: #f0f3f8;
+  --ad-empty: rgba(214, 222, 235, 0.45);
+  --ad-empty-bd: rgba(209, 226, 245, 0.45);
+  --ad-banner: linear-gradient(135deg, rgba(240, 168, 21, 0.18) 0%, #eef2f8 100%);
+
+  /* Texto */
+  --ad-text: #1b2740;
+  --ad-text-muted: #3f4a60;
+  --ad-text-subtle: #687387;
+  --ad-text-faint: #9aa3b4;
+
+  /* Acentos como TEXTO/ICONO -> oscurecidos para contraste sobre claro */
+  --ad-accent-fg: #9a6606;
+  --ad-blue-fg: #1d6fd0;
+  --ad-green-fg: #1a9b51;
+  --ad-purple-fg: #7e3f9e;
+  --ad-red-fg: #cf3030;
+
+  /* Acentos como BORDE/punto -> se mantienen saturados (marca) */
+  --ad-gold: #F0A815;
+  --ad-blue: #4a9eff;
+  --ad-green: #2ecc71;
+  --ad-red: #ef4444;
+}

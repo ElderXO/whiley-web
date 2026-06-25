@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Mail, Lock, LogIn, AlertCircle, Loader, Eye, EyeOff, Shield } from 'lucide-react'
+import { useNavigate, Link } from 'react-router-dom'
+import { Mail, Lock, LogIn, AlertCircle, Loader, Eye, EyeOff, Shield, ArrowLeft, Info } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import logoWiley from '../../assets/logo-header.png'
 import cloudDivider from '../../assets/cloud-divider.png'
@@ -89,12 +89,33 @@ function ParticlesBackground() {
   return <canvas ref={canvasRef} className="brand-canvas" />
 }
 
+// Genera una operacion matematica simple (suma o resta con numeros pequenos).
+// En las restas se garantiza a >= b para no mostrar resultados negativos.
+function generarCaptcha() {
+  const a = Math.floor(Math.random() * 10) + 1
+  const b = Math.floor(Math.random() * 10) + 1
+  const esSuma = Math.random() < 0.5
+
+  if (esSuma) {
+    return { a, b, op: '+', resultado: a + b }
+  }
+
+  const mayor = Math.max(a, b)
+  const menor = Math.min(a, b)
+  return { a: mayor, b: menor, op: '−', resultado: mayor - menor }
+}
+
 function AdminLogin() {
   const [formData, setFormData] = useState({ email: '', password: '' })
   const [showPassword, setShowPassword] = useState(false)
   const [rememberMe, setRememberMe] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  // Verificacion anti-bot: se genera una operacion nueva en cada carga del componente.
+  const [captcha, setCaptcha] = useState(() => generarCaptcha())
+  const [captchaInput, setCaptchaInput] = useState('')
+  // Aviso de "recuperacion de contrasena" (funcionalidad futura).
+  const [mostrarAvisoRecuperacion, setMostrarAvisoRecuperacion] = useState(false)
   const { login } = useAuth()
   const navigate = useNavigate()
 
@@ -102,10 +123,25 @@ function AdminLogin() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  // TODO: integrar recuperacion de contrasena por correo electronico.
+  const handleForgotPassword = () => {
+    setMostrarAvisoRecuperacion(true)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setLoading(true)
     setError(null)
+
+    // Verificacion humana: si la respuesta es incorrecta no se contacta al backend
+    // y se genera una nueva operacion.
+    if (Number(captchaInput) !== captcha.resultado) {
+      setError('Verificacion incorrecta. Resuelve la operacion para continuar.')
+      setCaptcha(generarCaptcha())
+      setCaptchaInput('')
+      return
+    }
+
+    setLoading(true)
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
@@ -125,6 +161,9 @@ function AdminLogin() {
 
     } catch (err) {
       setError(err.message)
+      // Tras un intento fallido se renueva la verificacion humana.
+      setCaptcha(generarCaptcha())
+      setCaptchaInput('')
     } finally {
       setLoading(false)
     }
@@ -213,7 +252,7 @@ function AdminLogin() {
               <label htmlFor="email">Correo electronico</label>
               <div className="login-input-wrapper">
                 <Mail size={18} className="input-icon" />
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="admin@wileytec.com" disabled={loading} autoComplete="email" />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="ejemplo@correo.com" disabled={loading} autoComplete="email" />
               </div>
             </div>
 
@@ -228,14 +267,35 @@ function AdminLogin() {
               </div>
             </div>
 
+            {/* Verificacion humana */}
+            <div className="login-input-group">
+              <label htmlFor="captcha">Demuestra que eres un ser humano</label>
+              <div className="login-captcha">
+                <span className="login-captcha-question">
+                  {captcha.a} {captcha.op} {captcha.b} =
+                </span>
+                <div className="login-input-wrapper login-captcha-input">
+                  <Shield size={18} className="input-icon" />
+                  <input type="number" id="captcha" name="captcha" value={captchaInput} onChange={(e) => setCaptchaInput(e.target.value)} required placeholder="Respuesta" disabled={loading} autoComplete="off" inputMode="numeric" />
+                </div>
+              </div>
+            </div>
+
             <div className="login-options">
               <label className="login-checkbox">
                 <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} disabled={loading} />
                 <span className="checkbox-custom"></span>
                 <span>Recordarme</span>
               </label>
-              <a href="#" className="login-forgot">Olvidaste tu contrasena?</a>
+              <button type="button" className="login-forgot" onClick={handleForgotPassword}>Olvidaste tu contrasena?</button>
             </div>
+
+            {mostrarAvisoRecuperacion && (
+              <div className="login-info-note">
+                <Info size={16} />
+                <span>La recuperacion de contrasena estara disponible proximamente.</span>
+              </div>
+            )}
 
             <button type="submit" className="login-submit" disabled={loading}>
               {loading ? (
@@ -252,6 +312,11 @@ function AdminLogin() {
             </button>
 
           </form>
+
+          <Link to="/" className="login-back-home">
+            <ArrowLeft size={16} />
+            <span>Ir a WileyTEC</span>
+          </Link>
 
           <div className="login-footer-text">
             <p>Solo personal autorizado de WileyTEC</p>

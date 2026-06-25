@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { AuthProvider } from './context/AuthContext'
+import { AdminThemeProvider } from './context/AdminThemeContext'
 
 // Componentes publicos
 import Header from './components/Header/Header'
@@ -93,7 +94,9 @@ function App() {
               path="/admin"
               element={
                 <ProtectedRoute>
-                  <AdminLayout />
+                  <AdminThemeProvider>
+                    <AdminLayout />
+                  </AdminThemeProvider>
                 </ProtectedRoute>
               }
             >

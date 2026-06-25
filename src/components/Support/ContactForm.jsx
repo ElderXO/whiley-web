@@ -15,9 +15,13 @@ const services = [
 function ContactForm() {
   const [searchParams] = useSearchParams()
 
-  // Pre-selecciona el servicio si llega por la URL (?servicio=...) y es valido
+  // Pre-selecciona el servicio si llega por la URL (?servicio=...).
+  // Si el servicio recibido no existe en la lista, cae automaticamente en "Otra consulta".
+  // Si no llega ningun parametro, queda sin seleccionar (placeholder).
   const servicioParam = searchParams.get('servicio')
-  const servicioInicial = services.includes(servicioParam) ? servicioParam : ''
+  const servicioInicial = services.includes(servicioParam)
+    ? servicioParam
+    : (servicioParam ? 'Otra consulta' : '')
 
   const [formData, setFormData] = useState({
     nombre: '',

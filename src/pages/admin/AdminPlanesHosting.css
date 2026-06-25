@@ -18,16 +18,16 @@
   align-items: center;
   gap: 12px;
   font-size: 1.6rem;
-  color: #ffffff;
+  color: var(--ad-text);
   margin: 0 0 0.4rem 0;
 }
 
 .planes-header h1 svg {
-  color: #F0A815;
+  color: var(--ad-accent-fg);
 }
 
 .planes-header p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.92rem;
   margin: 0;
 }
@@ -42,7 +42,7 @@
 .plan-card-admin {
   position: relative;
   padding: 1.8rem;
-  background: linear-gradient(180deg, rgba(10, 21, 48, 0.7) 0%, rgba(1, 7, 19, 0.9) 100%);
+  background: var(--ad-card-strong);
   border: 1px solid rgba(240, 168, 21, 0.2);
   border-radius: 14px;
   transition: all 0.3s ease;
@@ -56,7 +56,7 @@
 
 .plan-card-admin.destacado {
   border-color: rgba(240, 168, 21, 0.6);
-  background: linear-gradient(180deg, rgba(240, 168, 21, 0.08) 0%, rgba(1, 7, 19, 0.9) 100%);
+  background: var(--ad-card-highlight);
   box-shadow: 0 8px 25px rgba(240, 168, 21, 0.2);
 }
 
@@ -80,14 +80,14 @@
 
 .plan-card-header h3 {
   font-size: 1.3rem;
-  color: #ffffff;
+  color: var(--ad-text);
   margin: 0 0 0.3rem;
   font-weight: 700;
 }
 
 .plan-tagline {
   font-size: 0.85rem;
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   margin: 0 0 1.2rem;
 }
 
@@ -102,18 +102,18 @@
 
 .plan-card-price .currency {
   font-size: 1.1rem;
-  color: #F0A815;
+  color: var(--ad-accent-fg);
   font-weight: 600;
 }
 
 .plan-card-price .amount {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--ad-text);
 }
 
 .plan-card-price .period {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.85rem;
   margin-left: 4px;
 }
@@ -129,12 +129,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   font-size: 0.85rem;
 }
 
 .feature-row svg {
-  color: #F0A815;
+  color: var(--ad-accent-fg);
   flex-shrink: 0;
 }
 
@@ -148,10 +148,10 @@
 .btn-icon-action {
   flex: 1;
   padding: 0.6rem;
-  background: rgba(1, 7, 19, 0.6);
+  background: var(--ad-input);
   border: 1px solid rgba(240, 168, 21, 0.2);
   border-radius: 8px;
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -165,20 +165,20 @@
 
 .btn-destacar:hover {
   background: rgba(240, 168, 21, 0.15);
-  border-color: #F0A815;
-  color: #F0A815;
+  border-color: var(--ad-gold);
+  color: var(--ad-accent-fg);
 }
 
 .btn-editar:hover {
   background: rgba(74, 158, 255, 0.15);
-  border-color: #4a9eff;
-  color: #4a9eff;
+  border-color: var(--ad-blue);
+  color: var(--ad-blue-fg);
 }
 
 .btn-eliminar:hover {
   background: rgba(239, 68, 68, 0.15);
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--ad-red);
+  color: var(--ad-red-fg);
 }
 
 /* ESTADOS */
@@ -187,13 +187,13 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem;
-  color: #c5cad6;
+  color: var(--ad-text-muted);
 }
 
 .planes-empty {
   text-align: center;
   padding: 4rem 2rem;
-  background: rgba(10, 21, 48, 0.4);
+  background: var(--ad-empty);
   border: 1px dashed rgba(240, 168, 21, 0.2);
   border-radius: 14px;
 }
@@ -204,12 +204,12 @@
 }
 
 .planes-empty h3 {
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   margin: 0 0 0.5rem;
 }
 
 .planes-empty p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
 }
 
 .planes-error {
@@ -220,7 +220,7 @@
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.4);
   border-radius: 10px;
-  color: #ef4444;
+  color: var(--ad-red-fg);
   margin-bottom: 1rem;
 }
 
@@ -247,7 +247,7 @@
 .form-field label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #F0A815;
+  color: var(--ad-accent-fg);
   margin-bottom: 0.4rem;
   letter-spacing: 0.5px;
 }
@@ -255,10 +255,10 @@
 .form-field input[type="text"],
 .form-field input[type="number"] {
   padding: 0.85rem 1rem;
-  background: rgba(1, 7, 19, 0.6);
+  background: var(--ad-input);
   border: 1px solid rgba(240, 168, 21, 0.25);
   border-radius: 8px;
-  color: #ffffff;
+  color: var(--ad-text);
   font-size: 0.92rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -266,12 +266,12 @@
 
 .form-field input:focus {
   outline: none;
-  border-color: #F0A815;
+  border-color: var(--ad-gold);
   box-shadow: 0 0 0 3px rgba(240, 168, 21, 0.1);
 }
 
 .form-field input::placeholder {
-  color: #6c7280;
+  color: var(--ad-text-faint);
 }
 
 .form-checkbox {
@@ -280,7 +280,7 @@
   flex-direction: row !important;
   gap: 10px;
   cursor: pointer;
-  color: #c5cad6 !important;
+  color: var(--ad-text-muted) !important;
   font-size: 0.9rem !important;
   font-weight: 500 !important;
   text-transform: none !important;
@@ -305,13 +305,13 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
-  background: rgba(1, 7, 19, 0.6);
+  background: var(--ad-input);
   transition: all 0.3s ease;
 }
 
 .form-checkbox input:checked + .checkbox-custom-admin {
   background: linear-gradient(135deg, #FFC447, #F0A815);
-  border-color: #F0A815;
+  border-color: var(--ad-gold);
 }
 
 .form-checkbox input:checked + .checkbox-custom-admin::after {

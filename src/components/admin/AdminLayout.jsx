@@ -16,15 +16,24 @@ import {
   ChevronDown
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
+import { useAdminTheme } from '../../context/AdminThemeContext'
+import ThemeToggle from './ThemeToggle'
 import logoWiley from '../../assets/logo-header.png'
+import logoWileyDark from '../../assets/logo-header-dark.png'
+import '../../styles/admin-theme.css'
 import './AdminLayout.css'
 
 function AdminLayout() {
   const { admin, logout } = useAuth()
+  const { theme } = useAdminTheme()
   const navigate = useNavigate()
   const location = useLocation()
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
+
+  // Variante del logo segun el tema activo. Para cambiar el diseno oficial
+  // del logo claro basta reemplazar el archivo assets/logo-header-dark.png.
+  const logoSrc = theme === 'light' ? logoWileyDark : logoWiley
 
   const menuItems = [
     { path: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -45,7 +54,7 @@ function AdminLayout() {
   const isActive = (path) => location.pathname === path
 
   return (
-    <div className="admin-layout">
+    <div className="admin-layout" data-theme={theme}>
 
       {/* ========== SIDEBAR ========== */}
       <aside className={`admin-sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
@@ -53,7 +62,7 @@ function AdminLayout() {
         {/* Logo y nombre */}
         <div className="sidebar-header">
           <Link to="/admin/dashboard" className="sidebar-logo">
-            <img src={logoWiley} alt="WileyTEC" className="sidebar-logo-img" />
+            <img src={logoSrc} alt="WileyTEC" className="sidebar-logo-img" />
             {sidebarOpen && (
               <span className="sidebar-logo-text">
                 Wiley<span className="accent">TEC</span>
@@ -111,6 +120,8 @@ function AdminLayout() {
           </div>
 
           <div className="header-actions">
+
+            <ThemeToggle />
 
             <button className="header-notifications" aria-label="Notificaciones">
               <Bell size={20} />

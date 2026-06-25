@@ -18,16 +18,16 @@
   align-items: center;
   gap: 12px;
   font-size: 1.6rem;
-  color: #ffffff;
+  color: var(--ad-text);
   margin: 0 0 0.4rem 0;
 }
 
 .equipo-header h1 svg {
-  color: #F0A815;
+  color: var(--ad-accent-fg);
 }
 
 .equipo-header p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.92rem;
   margin: 0;
 }
@@ -44,7 +44,7 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem 1.5rem;
-  background: linear-gradient(180deg, rgba(10, 21, 48, 0.7) 0%, rgba(1, 7, 19, 0.9) 100%);
+  background: var(--ad-card-strong);
   border: 1px solid rgba(240, 168, 21, 0.2);
   border-radius: 16px;
   transition: all 0.3s ease;
@@ -67,7 +67,7 @@
   border: 3px solid rgba(240, 168, 21, 0.3);
   box-shadow: 0 0 20px rgba(240, 168, 21, 0.2);
   position: relative;
-  background: #050c1c;
+  background: var(--ad-deep);
 }
 
 .miembro-avatar img {
@@ -90,14 +90,14 @@
 
 /* Info */
 .miembro-info h3 {
-  color: #ffffff;
+  color: var(--ad-text);
   font-size: 1.15rem;
   margin: 0 0 0.3rem;
   font-weight: 700;
 }
 
 .miembro-info p {
-  color: #F0A815;
+  color: var(--ad-accent-fg);
   font-size: 0.88rem;
   margin: 0 0 0.5rem;
   font-weight: 500;
@@ -109,7 +109,7 @@
   background: rgba(240, 168, 21, 0.08);
   border: 1px solid rgba(240, 168, 21, 0.2);
   border-radius: 999px;
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.72rem;
   letter-spacing: 0.5px;
 }
@@ -130,8 +130,8 @@
   height: 40px;
   border-radius: 10px;
   border: 1px solid rgba(240, 168, 21, 0.2);
-  background: rgba(1, 7, 19, 0.5);
-  color: #c5cad6;
+  background: var(--ad-inset);
+  color: var(--ad-text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -145,14 +145,14 @@
 
 .btn-editar:hover {
   background: rgba(74, 158, 255, 0.15);
-  border-color: #4a9eff;
-  color: #4a9eff;
+  border-color: var(--ad-blue);
+  color: var(--ad-blue-fg);
 }
 
 .btn-eliminar:hover {
   background: rgba(239, 68, 68, 0.15);
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--ad-red);
+  color: var(--ad-red-fg);
 }
 
 /* ESTADOS */
@@ -161,13 +161,13 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem;
-  color: #c5cad6;
+  color: var(--ad-text-muted);
 }
 
 .equipo-empty {
   text-align: center;
   padding: 4rem 2rem;
-  background: rgba(10, 21, 48, 0.4);
+  background: var(--ad-empty);
   border: 1px dashed rgba(240, 168, 21, 0.2);
   border-radius: 14px;
 }
@@ -178,12 +178,12 @@
 }
 
 .equipo-empty h3 {
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   margin: 0 0 0.5rem;
 }
 
 .equipo-empty p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
 }
 
 .equipo-error {
@@ -194,7 +194,7 @@
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.4);
   border-radius: 10px;
-  color: #ef4444;
+  color: var(--ad-red-fg);
   margin-bottom: 1rem;
 }
 
@@ -210,7 +210,7 @@
 
 .foto-preview-section label {
   font-size: 0.78rem;
-  color: #F0A815;
+  color: var(--ad-accent-fg);
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 0.8rem;
@@ -223,7 +223,7 @@
   overflow: hidden;
   border: 3px solid rgba(240, 168, 21, 0.3);
   box-shadow: 0 0 25px rgba(240, 168, 21, 0.2);
-  background: #050c1c;
+  background: var(--ad-deep);
 }
 
 .foto-preview-circle img {
@@ -244,7 +244,7 @@
 
 .form-hint {
   display: block;
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.78rem;
   margin-top: 0.4rem;
   line-height: 1.4;

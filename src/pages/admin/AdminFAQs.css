@@ -18,16 +18,16 @@
   align-items: center;
   gap: 12px;
   font-size: 1.6rem;
-  color: #ffffff;
+  color: var(--ad-text);
   margin: 0 0 0.4rem 0;
 }
 
 .faqs-admin-header h1 svg {
-  color: #F0A815;
+  color: var(--ad-accent-fg);
 }
 
 .faqs-admin-header p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.92rem;
   margin: 0;
 }
@@ -40,7 +40,7 @@
 }
 
 .faq-admin-item {
-  background: linear-gradient(180deg, rgba(10, 21, 48, 0.6) 0%, rgba(1, 7, 19, 0.8) 100%);
+  background: var(--ad-card);
   border: 1px solid rgba(240, 168, 21, 0.2);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -70,7 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #F0A815;
+  color: var(--ad-accent-fg);
   font-weight: 700;
   font-size: 0.85rem;
 }
@@ -82,7 +82,7 @@
 }
 
 .faq-admin-pregunta {
-  color: #ffffff;
+  color: var(--ad-text);
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.4rem 0;
@@ -90,13 +90,13 @@
 }
 
 .faq-admin-respuesta {
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   font-size: 0.9rem;
   line-height: 1.6;
   margin: 0.8rem 0 0;
   padding: 1rem;
-  background: rgba(1, 7, 19, 0.6);
-  border-left: 3px solid #F0A815;
+  background: var(--ad-input);
+  border-left: 3px solid var(--ad-gold);
   border-radius: 6px;
   white-space: pre-wrap;
   animation: fadeIn 0.3s ease-out;
@@ -119,8 +119,8 @@
   height: 36px;
   border-radius: 8px;
   border: 1px solid rgba(240, 168, 21, 0.2);
-  background: rgba(1, 7, 19, 0.5);
-  color: #c5cad6;
+  background: var(--ad-inset);
+  color: var(--ad-text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -134,20 +134,20 @@
 
 .btn-expandir:hover {
   background: rgba(240, 168, 21, 0.15);
-  border-color: #F0A815;
-  color: #F0A815;
+  border-color: var(--ad-gold);
+  color: var(--ad-accent-fg);
 }
 
 .btn-editar-faq:hover {
   background: rgba(74, 158, 255, 0.15);
-  border-color: #4a9eff;
-  color: #4a9eff;
+  border-color: var(--ad-blue);
+  color: var(--ad-blue-fg);
 }
 
 .btn-eliminar-faq:hover {
   background: rgba(239, 68, 68, 0.15);
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--ad-red);
+  color: var(--ad-red-fg);
 }
 
 /* ESTADOS */
@@ -156,13 +156,13 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem;
-  color: #c5cad6;
+  color: var(--ad-text-muted);
 }
 
 .faqs-admin-empty {
   text-align: center;
   padding: 4rem 2rem;
-  background: rgba(10, 21, 48, 0.4);
+  background: var(--ad-empty);
   border: 1px dashed rgba(240, 168, 21, 0.2);
   border-radius: 14px;
 }
@@ -173,12 +173,12 @@
 }
 
 .faqs-admin-empty h3 {
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   margin: 0 0 0.5rem;
 }
 
 .faqs-admin-empty p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
 }
 
 .faqs-admin-error {
@@ -189,7 +189,7 @@
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.4);
   border-radius: 10px;
-  color: #ef4444;
+  color: var(--ad-red-fg);
   margin-bottom: 1rem;
 }
 
@@ -203,7 +203,7 @@
 .form-field-faq label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #F0A815;
+  color: var(--ad-accent-fg);
   margin-bottom: 0.4rem;
   letter-spacing: 0.5px;
 }
@@ -211,10 +211,10 @@
 .form-field-faq input,
 .form-field-faq textarea {
   padding: 0.85rem 1rem;
-  background: rgba(1, 7, 19, 0.6);
+  background: var(--ad-input);
   border: 1px solid rgba(240, 168, 21, 0.25);
   border-radius: 8px;
-  color: #ffffff;
+  color: var(--ad-text);
   font-size: 0.92rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -229,18 +229,18 @@
 .form-field-faq input:focus,
 .form-field-faq textarea:focus {
   outline: none;
-  border-color: #F0A815;
+  border-color: var(--ad-gold);
   box-shadow: 0 0 0 3px rgba(240, 168, 21, 0.1);
 }
 
 .form-field-faq input::placeholder,
 .form-field-faq textarea::placeholder {
-  color: #6c7280;
+  color: var(--ad-text-faint);
 }
 
 .form-hint {
   display: block;
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.78rem;
   margin-top: 0.4rem;
   line-height: 1.4;

@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import cardInfraestructura from '../../assets/card-infraestructura.png'
 import cardSap from '../../assets/card-sap.png'
 import cardDesarrollo from '../../assets/card-desarrollo.png'
@@ -60,10 +61,13 @@ function Cards() {
             <div className="card-content">
               <h3 className="card-title">{card.title}</h3>
               <p className="card-description">{card.description}</p>
-              <a href="#" className="card-link">
+              <Link
+                to={`/soporte?servicio=${encodeURIComponent(card.title)}#contacto`}
+                className="card-link"
+              >
                 Ver más
                 <ArrowRight size={14} strokeWidth={2.5} className="card-link-arrow" />
-              </a>
+              </Link>
             </div>
           </article>
         ))}

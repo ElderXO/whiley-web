@@ -18,16 +18,16 @@
   align-items: center;
   gap: 12px;
   font-size: 1.6rem;
-  color: #ffffff;
+  color: var(--ad-text);
   margin: 0 0 0.4rem 0;
 }
 
 .bigdata-admin-header h1 svg {
-  color: #4a9eff;
+  color: var(--ad-blue-fg);
 }
 
 .bigdata-admin-header p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
   font-size: 0.92rem;
   margin: 0;
 }
@@ -65,7 +65,7 @@
   background: transparent;
   border: 1px solid rgba(74, 158, 255, 0.4);
   border-radius: 10px;
-  color: #4a9eff;
+  color: var(--ad-blue-fg);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -79,7 +79,7 @@
 
 /* TABLA */
 .bigdata-admin-table-wrapper {
-  background: linear-gradient(180deg, rgba(10, 30, 60, 0.6) 0%, rgba(1, 7, 19, 0.9) 100%);
+  background: var(--ad-card-bd);
   border: 1px solid rgba(74, 158, 255, 0.25);
   border-radius: 14px;
   overflow: hidden;
@@ -101,7 +101,7 @@
   text-align: left;
   font-size: 0.78rem;
   font-weight: 700;
-  color: #4a9eff;
+  color: var(--ad-blue-fg);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -125,7 +125,7 @@
 
 .bigdata-admin-table td {
   padding: 1rem 1.2rem;
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   font-size: 0.92rem;
   vertical-align: middle;
 }
@@ -138,7 +138,7 @@
 }
 
 .plan-name-admin-cell strong {
-  color: #ffffff;
+  color: var(--ad-text);
   font-size: 1rem;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .precio-admin-bd {
-  color: #4a9eff !important;
+  color: var(--ad-blue-fg) !important;
   font-size: 1rem;
 }
 
@@ -171,8 +171,8 @@
   height: 34px;
   border-radius: 8px;
   border: 1px solid rgba(74, 158, 255, 0.2);
-  background: rgba(1, 7, 19, 0.5);
-  color: #c5cad6;
+  background: var(--ad-inset);
+  color: var(--ad-text-muted);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -186,20 +186,20 @@
 
 .btn-pop:hover {
   background: rgba(74, 158, 255, 0.15);
-  border-color: #4a9eff;
-  color: #4a9eff;
+  border-color: var(--ad-blue);
+  color: var(--ad-blue-fg);
 }
 
 .btn-edit-bd:hover {
   background: rgba(74, 158, 255, 0.15);
-  border-color: #4a9eff;
-  color: #4a9eff;
+  border-color: var(--ad-blue);
+  color: var(--ad-blue-fg);
 }
 
 .btn-del-bd:hover {
   background: rgba(239, 68, 68, 0.15);
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--ad-red);
+  color: var(--ad-red-fg);
 }
 
 /* ESTADOS */
@@ -208,13 +208,13 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem;
-  color: #c5cad6;
+  color: var(--ad-text-muted);
 }
 
 .bigdata-admin-empty {
   text-align: center;
   padding: 4rem 2rem;
-  background: rgba(10, 30, 60, 0.4);
+  background: var(--ad-empty-bd);
   border: 1px dashed rgba(74, 158, 255, 0.3);
   border-radius: 14px;
 }
@@ -225,12 +225,12 @@
 }
 
 .bigdata-admin-empty h3 {
-  color: #c5cad6;
+  color: var(--ad-text-muted);
   margin: 0 0 0.5rem;
 }
 
 .bigdata-admin-empty p {
-  color: #8a8f9b;
+  color: var(--ad-text-subtle);
 }
 
 .bigdata-admin-error {
@@ -241,7 +241,7 @@
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.4);
   border-radius: 10px;
-  color: #ef4444;
+  color: var(--ad-red-fg);
   margin-bottom: 1rem;
 }
 
@@ -264,7 +264,7 @@
 .form-field-bd label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #4a9eff;
+  color: var(--ad-blue-fg);
   margin-bottom: 0.4rem;
   letter-spacing: 0.5px;
 }
@@ -272,10 +272,10 @@
 .form-field-bd input[type="text"],
 .form-field-bd input[type="number"] {
   padding: 0.85rem 1rem;
-  background: rgba(1, 7, 19, 0.6);
+  background: var(--ad-input);
   border: 1px solid rgba(74, 158, 255, 0.25);
   border-radius: 8px;
-  color: #ffffff;
+  color: var(--ad-text);
   font-size: 0.92rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -283,12 +283,12 @@
 
 .form-field-bd input:focus {
   outline: none;
-  border-color: #4a9eff;
+  border-color: var(--ad-blue);
   box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
 }
 
 .form-field-bd input::placeholder {
-  color: #6c7280;
+  color: var(--ad-text-faint);
 }
 
 .form-checkbox-bd {
@@ -297,7 +297,7 @@
   flex-direction: row !important;
   gap: 10px;
   cursor: pointer;
-  color: #c5cad6 !important;
+  color: var(--ad-text-muted) !important;
   font-size: 0.9rem !important;
   font-weight: 500 !important;
   text-transform: none !important;
@@ -322,13 +322,13 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
-  background: rgba(1, 7, 19, 0.6);
+  background: var(--ad-input);
   transition: all 0.3s ease;
 }
 
 .form-checkbox-bd input:checked + .checkbox-custom-bd {
   background: linear-gradient(135deg, #6db4ff, #4a9eff);
-  border-color: #4a9eff;
+  border-color: var(--ad-blue);
 }
 
 .form-checkbox-bd input:checked + .checkbox-custom-bd::after {

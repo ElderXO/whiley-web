@@ -8,7 +8,18 @@ export const WHATSAPP_PRINCIPAL = '51920335420'
 export function openWhatsApp(telefono = WHATSAPP_PRINCIPAL, mensaje = '') {
   const numero = String(telefono).replace(/\D/g, '')
   const texto = mensaje ? `?text=${encodeURIComponent(mensaje)}` : ''
-  window.open(`https://wa.me/${numero}${texto}`, '_blank', 'noopener,noreferrer')
+  const url = `https://wa.me/${numero}${texto}`
+
+  // Abrimos con un enlace simulado en vez de window.open con "features": en
+  // produccion (HTTPS, otro dominio) el bloqueador de pop-ups suele bloquear
+  // window.open(..., 'noopener,noreferrer'). Un click de enlace real no se bloquea.
+  const enlace = document.createElement('a')
+  enlace.href = url
+  enlace.target = '_blank'
+  enlace.rel = 'noopener noreferrer'
+  document.body.appendChild(enlace)
+  enlace.click()
+  enlace.remove()
 }
 
 // Mensaje por defecto cuando alguien escribe desde la web.

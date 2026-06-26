@@ -120,3 +120,17 @@ export const historialAPI = {
   listar: () => apiRequest('/historial'),
   porTabla: (tabla) => apiRequest(`/historial/${tabla}`)
 }
+
+// ====== WHATSAPP CONTACTOS ======
+export const whatsappAPI = {
+  listar: () => apiRequest('/whatsapp-contactos/todos'),
+  crear: (datos) => apiRequest('/whatsapp-contactos', {
+    method: 'POST',
+    body: JSON.stringify(datos)
+  }),
+  actualizar: (id, datos) => apiRequest(`/whatsapp-contactos/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(datos)
+  }),
+  eliminar: (id) => apiRequest(`/whatsapp-contactos/${id}`, { method: 'DELETE' })
+}

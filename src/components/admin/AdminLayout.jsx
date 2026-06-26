@@ -7,6 +7,7 @@ import {
   Database,
   HardDrive,
   Users,
+  MessageCircle,
   HelpCircle,
   Clock,
   LogOut,
@@ -42,6 +43,7 @@ function AdminLayout() {
     { path: '/admin/planes-vps', icon: HardDrive, label: 'Planes VPS' },
     { path: '/admin/planes-bigdata', icon: Database, label: 'Planes Big Data' },
     { path: '/admin/equipo', icon: Users, label: 'Equipo' },
+    { path: '/admin/whatsapp', icon: MessageCircle, label: 'WhatsApp' },
     { path: '/admin/faqs', icon: HelpCircle, label: 'FAQs' },
     { path: '/admin/historial', icon: Clock, label: 'Historial' }
   ]

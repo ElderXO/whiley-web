@@ -1,0 +1,252 @@
+/* ====== OVERLAY ====== */
+.segmodal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(1, 7, 19, 0.8);
+  animation: segmodalFade 0.25s ease forwards;
+}
+
+/* ====== PANEL ====== */
+.segmodal-panel {
+  position: relative;
+  width: 90%;
+  max-width: 720px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #111D35;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  animation: segmodalPop 0.28s ease forwards;
+}
+
+/* ====== CABECERA ====== */
+.segmodal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.6rem 1.8rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.segmodal-num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid #010713;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.segmodal-num--celeste {
+  background: #4A9EFF;
+  box-shadow: 0 0 18px rgba(74, 158, 255, 0.4);
+}
+
+.segmodal-num--dorado {
+  background: #F0A815;
+  box-shadow: 0 0 18px rgba(240, 168, 21, 0.4);
+}
+
+.segmodal-title {
+  flex: 1;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+}
+
+.segmodal-title-a {
+  color: #ffffff;
+}
+
+.segmodal-title-b--celeste {
+  color: #4A9EFF;
+}
+
+.segmodal-title-b--dorado {
+  color: #F0A815;
+}
+
+.segmodal-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #c7d4e8;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.segmodal-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* ====== CUERPO ====== */
+.segmodal-body {
+  padding: 1.4rem 1.8rem;
+}
+
+.segmodal-intro {
+  margin: 0 0 1.3rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #c7d4e8;
+}
+
+/* ====== CHIPS DE TECNOLOGIAS ====== */
+.segmodal-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.segmodal-chip {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(74, 158, 255, 0.35);
+  background: rgba(74, 158, 255, 0.1);
+  font-size: 0.8rem;
+  color: #cfe2ff;
+}
+
+/* ====== INCLUYE (2 columnas) ====== */
+.segmodal-subtitle {
+  margin: 0 0 0.9rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #F0A815;
+}
+
+.segmodal-incluye {
+  list-style: none;
+  margin: 0 0 1.8rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1.2rem;
+}
+
+.segmodal-incluye-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #dbe5f3;
+}
+
+.segmodal-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #4A9EFF;
+}
+
+/* ====== MINI BLOQUES ====== */
+.segmodal-bloques {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.segmodal-bloque {
+  padding: 1.1rem 1rem;
+  background: rgba(1, 7, 19, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.segmodal-bloque-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.segmodal-bloque-text {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #c7d4e8;
+}
+
+/* ====== FOOTER / CTA ====== */
+.segmodal-footer {
+  display: flex;
+  justify-content: center;
+  padding: 1.4rem 1.8rem 1.8rem;
+}
+
+.segmodal-cta {
+  padding: 0.85rem 1.8rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #F0A815, #FFC447);
+  color: #010713;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.segmodal-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(240, 168, 21, 0.35);
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes segmodalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes segmodalPop {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 700px) {
+  .segmodal-incluye {
+    grid-template-columns: 1fr;
+  }
+
+  .segmodal-bloques {
+    grid-template-columns: 1fr;
+  }
+
+  .segmodal-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ====== ACCESIBILIDAD: menos movimiento ====== */
+@media (prefers-reduced-motion: reduce) {
+  .segmodal-overlay,
+  .segmodal-panel {
+    animation: none;
+  }
+
+  .segmodal-cta:hover {
+    transform: none;
+  }
+}

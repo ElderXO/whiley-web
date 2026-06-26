@@ -6,10 +6,13 @@ import { AdminThemeProvider } from './context/AdminThemeContext'
 // Componentes publicos
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import WhatsAppWidget from './components/WhatsApp/WhatsAppWidget'
 import Home from './pages/Home'
 import Nosotros from './pages/Nosotros'
 import Servicios from './pages/Servicios'
 import Soporte from './pages/Soporte'
+import Erp from './pages/Erp'
+import Desarrollo from './pages/Desarrollo'
 
 // Admin
 import AdminLogin from './pages/admin/AdminLogin'
@@ -20,6 +23,7 @@ import AdminPlanesHosting from './pages/admin/AdminPlanesHosting'
 import AdminPlanesVPS from './pages/admin/AdminPlanesVPS'
 import AdminPlanesBigData from './pages/admin/AdminPlanesBigData'
 import AdminEquipo from './pages/admin/AdminEquipo'
+import AdminWhatsApp from './pages/admin/AdminWhatsApp'
 import AdminFAQs from './pages/admin/AdminFAQs'
 import AdminHistorial from './pages/admin/AdminHistorial'
 import ProtectedRoute from './components/admin/ProtectedRoute'
@@ -68,6 +72,7 @@ function PublicLayout({ children }) {
       <Header />
       {children}
       <Footer />
+      <WhatsAppWidget />
     </>
   )
 }
@@ -85,6 +90,8 @@ function App() {
             <Route path="/nosotros" element={<PublicLayout><Nosotros /></PublicLayout>} />
             <Route path="/servicios" element={<PublicLayout><Servicios /></PublicLayout>} />
             <Route path="/soporte" element={<PublicLayout><Soporte /></PublicLayout>} />
+            <Route path="/erp" element={<PublicLayout><Erp /></PublicLayout>} />
+            <Route path="/desarrollo" element={<PublicLayout><Desarrollo /></PublicLayout>} />
 
             {/* RUTAS ADMIN */}
             <Route path="/admin/login" element={<AdminLogin />} />
@@ -106,6 +113,7 @@ function App() {
               <Route path="planes-vps" element={<AdminPlanesVPS />} />
               <Route path="planes-bigdata" element={<AdminPlanesBigData />} />
               <Route path="equipo" element={<AdminEquipo />} />
+              <Route path="whatsapp" element={<AdminWhatsApp />} />
               <Route path="faqs" element={<AdminFAQs />} />
               <Route path="historial" element={<AdminHistorial />} />
             </Route>

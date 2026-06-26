@@ -1,0 +1,252 @@
+/* ===========================================================
+   WhatsApp Widget — WileyTEC
+   Cabecera verde + cuerpo azul acero (paleta del sitio)
+   =========================================================== */
+
+.wa-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------- BOTON FLOTANTE ---------- */
+.wa-fab {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #25d366, #128c7e);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(18, 140, 126, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-left: auto;
+}
+
+.wa-fab:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+}
+
+.wa-fab:focus-visible {
+  outline: 3px solid #FFC447;
+  outline-offset: 3px;
+}
+
+.wa-fab--active {
+  background: linear-gradient(145deg, #1b2a44, #111d35);
+}
+
+.wa-fab__close {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* Anillo de pulso */
+.wa-fab__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  opacity: 0.6;
+  z-index: -1;
+  animation: wa-pulse 2.2s ease-out infinite;
+}
+
+@keyframes wa-pulse {
+  0% { transform: scale(1); opacity: 0.55; }
+  70% { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+/* ---------- PANEL ---------- */
+.wa-panel {
+  position: absolute;
+  bottom: 76px;
+  right: 0;
+  width: 330px;
+  max-width: calc(100vw - 48px);
+  background: #0d1726;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(74, 158, 255, 0.12);
+  transform: translateY(16px) scale(0.96);
+  transform-origin: bottom right;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 0.22s ease;
+}
+
+.wa-panel--open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- CABECERA VERDE ---------- */
+.wa-panel__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+}
+
+.wa-panel__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wa-panel__head-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.wa-panel__title {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.wa-panel__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  opacity: 0.92;
+}
+
+.wa-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b9ffce;
+  box-shadow: 0 0 6px #b9ffce;
+}
+
+.wa-panel__close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.85;
+  padding: 0 2px;
+}
+
+.wa-panel__close:hover { opacity: 1; }
+
+/* ---------- CUERPO AZUL ACERO ---------- */
+.wa-panel__body {
+  padding: 16px 14px 18px;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(74, 158, 255, 0.08), transparent 60%),
+    linear-gradient(180deg, #111d35, #0b1424);
+}
+
+.wa-panel__intro {
+  color: #c7d4e8;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+
+.wa-contactos {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.wa-contacto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid rgba(74, 158, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.wa-contacto:hover {
+  transform: translateX(3px);
+  border-color: rgba(37, 211, 102, 0.6);
+  background: rgba(37, 211, 102, 0.08);
+}
+
+.wa-contacto:focus-visible {
+  outline: 2px solid #FFC447;
+  outline-offset: 2px;
+}
+
+.wa-contacto__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #010713;
+  background: linear-gradient(145deg, #F0A815, #FFC447);
+}
+
+.wa-contacto__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.wa-contacto__nombre {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.wa-contacto__cargo {
+  color: #8da3c4;
+  font-size: 0.76rem;
+}
+
+.wa-contacto__go {
+  color: #25d366;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .wa-widget { bottom: 18px; right: 18px; }
+  .wa-panel { width: calc(100vw - 36px); }
+}
+
+/* ---------- ACCESIBILIDAD: reduce motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab__pulse { animation: none; }
+  .wa-panel { transition: opacity 0.2s ease; transform: none; }
+  .wa-fab:hover { transform: none; }
+}

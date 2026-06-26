@@ -1,0 +1,257 @@
+.admin-whatsapp {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.wa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.wa-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.6rem;
+  color: var(--ad-text);
+  margin: 0 0 0.4rem 0;
+}
+
+.wa-header h1 svg {
+  color: var(--ad-accent-fg);
+}
+
+.wa-header p {
+  color: var(--ad-text-subtle);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* GRID DE CONTACTOS */
+.wa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.wa-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.5rem;
+  background: var(--ad-card-strong);
+  border: 1px solid rgba(240, 168, 21, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.wa-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(240, 168, 21, 0.5);
+  box-shadow: 0 12px 35px rgba(240, 168, 21, 0.15);
+}
+
+.wa-card--inactivo {
+  opacity: 0.6;
+}
+
+.wa-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.wa-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #ffffff;
+}
+
+.wa-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.wa-badge--on {
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  color: #4ade80;
+}
+
+.wa-badge--off {
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: var(--ad-text-subtle);
+}
+
+/* Info */
+.wa-card-info h3 {
+  color: var(--ad-text);
+  font-size: 1.12rem;
+  margin: 0 0 0.3rem;
+  font-weight: 700;
+}
+
+.wa-card-cargo {
+  color: var(--ad-accent-fg);
+  font-size: 0.86rem;
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.wa-card-phone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ad-text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.6rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.wa-card-phone svg {
+  color: #25D366;
+}
+
+.wa-orden {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(240, 168, 21, 0.08);
+  border: 1px solid rgba(240, 168, 21, 0.2);
+  border-radius: 999px;
+  color: var(--ad-text-subtle);
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+
+/* Acciones */
+.wa-acciones {
+  display: flex;
+  gap: 8px;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(240, 168, 21, 0.1);
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.btn-icon-action {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(240, 168, 21, 0.2);
+  background: var(--ad-inset);
+  color: var(--ad-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-icon-action:hover {
+  transform: translateY(-2px);
+}
+
+.btn-toggle:hover {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: #25D366;
+  color: #4ade80;
+}
+
+.btn-editar:hover {
+  background: rgba(74, 158, 255, 0.15);
+  border-color: var(--ad-blue);
+  color: var(--ad-blue-fg);
+}
+
+.btn-eliminar:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: var(--ad-red);
+  color: var(--ad-red-fg);
+}
+
+/* ESTADOS */
+.wa-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  color: var(--ad-text-muted);
+}
+
+.wa-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--ad-empty);
+  border: 1px dashed rgba(240, 168, 21, 0.2);
+  border-radius: 14px;
+}
+
+.wa-empty svg {
+  color: rgba(240, 168, 21, 0.4);
+  margin-bottom: 1rem;
+}
+
+.wa-empty h3 {
+  color: var(--ad-text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.wa-empty p {
+  color: var(--ad-text-subtle);
+}
+
+.wa-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 1.2rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 10px;
+  color: var(--ad-red-fg);
+  margin-bottom: 1rem;
+}
+
+.wa-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 1.2rem;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  border-radius: 10px;
+  color: #4ade80;
+  margin-bottom: 1rem;
+}
+
+/* CHECKBOX ACTIVO */
+.wa-check-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--ad-text-muted);
+  font-size: 0.9rem;
+}
+
+.wa-check-label input {
+  width: 18px;
+  height: 18px;
+  accent-color: #25D366;
+  cursor: pointer;
+}

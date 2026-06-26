@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Database, Check, Star, Loader, AlertCircle } from 'lucide-react'
+import { openWhatsApp, mensajePlan } from '../../utils/whatsapp'
 import './BigDataPlans.css'
 
 function BigDataPlans() {
-  const navigate = useNavigate()
   const [planes, setPlanes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -111,7 +110,7 @@ function BigDataPlans() {
                 <td>
                   <button
                     className="bigdata-btn"
-                    onClick={() => navigate(`/soporte?servicio=${encodeURIComponent('VPS Big Data')}#contacto`)}
+                    onClick={() => openWhatsApp('51920335420', mensajePlan(plan.nombre))}
                   >
                     Contratar
                   </button>

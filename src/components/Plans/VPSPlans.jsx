@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Cpu, Zap, Rocket, Crown, Check, Star, Loader, AlertCircle, Server } from 'lucide-react'
+import { openWhatsApp, mensajePlan } from '../../utils/whatsapp'
 import './VPSPlans.css'
 
 // Iconos por nombre (los planes VPS suelen tener nombres tipo Aurora, Nebula, etc)
@@ -12,7 +12,6 @@ const iconosPorNombre = {
 }
 
 function VPSPlans() {
-  const navigate = useNavigate()
   const [planes, setPlanes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -117,7 +116,7 @@ function VPSPlans() {
 
               <button
                 className="vps-btn"
-                onClick={() => navigate(`/soporte?servicio=${encodeURIComponent('VPS SSD')}#contacto`)}
+                onClick={() => openWhatsApp('51920335420', mensajePlan(plan.nombre))}
               >
                 Contratar VPS
               </button>

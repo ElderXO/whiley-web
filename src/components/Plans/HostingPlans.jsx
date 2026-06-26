@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Rocket, Zap, Gauge, Server, Check, Star, Loader, AlertCircle } from 'lucide-react'
+import { openWhatsApp, mensajePlan } from '../../utils/whatsapp'
 import './HostingPlans.css'
 
 const iconosPorNombre = {
@@ -12,7 +12,6 @@ const iconosPorNombre = {
 }
 
 function HostingPlans() {
-  const navigate = useNavigate()
   const [planes, setPlanes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -137,7 +136,7 @@ function HostingPlans() {
 
               <button
                 className="plan-btn"
-                onClick={() => navigate(`/soporte?servicio=${encodeURIComponent('Hosting SSD')}#contacto`)}
+                onClick={() => openWhatsApp('51920335420', mensajePlan(plan.nombre))}
               >
                 Contratar plan
               </button>

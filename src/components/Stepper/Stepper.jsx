@@ -1,4 +1,4 @@
-import { Search, Box, TrendingUp, MoveRight } from 'lucide-react'
+import { Search, Lightbulb, Code2, Rocket, TrendingUp, MoveRight } from 'lucide-react'
 import './Stepper.css'
 
 function Stepper() {
@@ -6,17 +6,27 @@ function Stepper() {
     {
       number: '01',
       icon: Search,
-      label: 'Diagnóstico'
+      label: 'Entendemos tu negocio'
     },
     {
       number: '02',
-      icon: Box,
-      label: 'Implementación'
+      icon: Lightbulb,
+      label: 'Diseñamos la mejor solución'
     },
     {
       number: '03',
+      icon: Code2,
+      label: 'Desarrollamos a medida'
+    },
+    {
+      number: '04',
+      icon: Rocket,
+      label: 'Implementamos e integramos'
+    },
+    {
+      number: '05',
       icon: TrendingUp,
-      label: 'Optimización'
+      label: 'Optimizamos y generamos valor'
     }
   ]
 
@@ -37,8 +47,10 @@ function Stepper() {
                   <div className="step-icon-circle">
                     <Icon size={22} strokeWidth={2} className="step-icon" />
                   </div>
-                  <span className="step-number">{step.number}</span>
-                  <span className="step-label">{step.label}</span>
+                  <div className="step-text">
+                    <span className="step-number">{step.number}</span>
+                    <span className="step-label">{step.label}</span>
+                  </div>
                 </div>
 
                 {/* Conector con flecha animada (excepto el último) */}

@@ -1,4 +1,5 @@
 import Hero from '../components/Hero/Hero'
+import Clientes from '../components/Clientes/Clientes'
 import Stepper from '../components/Stepper/Stepper'
 import Cards from '../components/Cards/Cards'
 import Summary from '../components/Summary/Summary'
@@ -8,6 +9,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <Clientes />
       <Stepper />
       <Cards />
       <Summary />

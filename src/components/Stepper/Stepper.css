@@ -2,7 +2,7 @@
   padding: 0 1.5rem 2.5rem;
   display: flex;
   justify-content: center;
-  margin-top: -7rem;              /* Antes -3rem → ahora -6rem */
+  margin-top: -4rem;              /* Bajado para no encimar la seccion de clientes */
   position: relative;
   z-index: 5;
 }
@@ -101,15 +101,26 @@
 
 .step-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex: 1;
 }
 
 .step {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 16px;
+  text-align: left;
+  gap: 14px;
   flex-shrink: 0;
+}
+
+/* Columna de texto a la derecha del icono: numero arriba, etiqueta abajo */
+.step-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  max-width: 140px;
 }
 
 /* Círculo HUD tecnológico */
@@ -168,18 +179,21 @@
 }
 
 .step-number {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #F0A815;
   letter-spacing: 0.5px;
+  line-height: 1;
   text-shadow: 0 0 12px rgba(240, 168, 21, 0.4);
 }
 
 .step-label {
-  font-size: 1.1rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 0.3px;
+  line-height: 1.3;
+  max-width: 150px;
 }
 
 /* ====== CONECTOR CON FLECHA ANIMADA (NUEVO) ====== */
@@ -231,7 +245,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  margin: 0 1.5rem;
+  margin: 17px 1rem 0;
   min-height: 30px;
 }
 

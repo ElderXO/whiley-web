@@ -1,0 +1,217 @@
+.clientes-section {
+  background: #010713;
+  /* margin-top negativo para subir la seccion; padding inferior amplio porque
+     el Stepper tiene margin-top: -7rem y se solapa sobre esta zona vacia. */
+  margin-top: -7.5rem;
+  padding: 0 1.5rem 8.5rem;
+}
+
+.clientes-inner {
+  max-width: 1560px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ====== TEXTO IZQUIERDA ====== */
+.clientes-text {
+  max-width: none;
+  padding-left: 1.4rem;
+  border-left: 3px solid;
+  border-image: linear-gradient(to bottom, #F0A815, #FFC447) 1;
+}
+
+.clientes-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.18;
+  margin: 0 0 1rem;
+  background: linear-gradient(120deg, #ffffff 0%, #e9f1ff 50%, #4A9EFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.clientes-accent {
+  -webkit-text-fill-color: #4A9EFF;
+  text-shadow: 0 0 18px rgba(74, 158, 255, 0.45);
+}
+
+.clientes-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #c7d4e8;
+  margin: 0;
+}
+
+/* ====== MARQUEE ====== */
+.clientes-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* Espacio vertical para que el logo ampliado en hover no se recorte arriba/abajo */
+  padding: 18px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 4%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 4%, #000 90%, transparent 100%);
+}
+
+.clientes-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+  animation: clientesScroll 30s linear infinite;
+}
+
+/* Pausa al pasar el mouse */
+.clientes-marquee:hover .clientes-track {
+  animation-play-state: paused;
+}
+
+/* De derecha a izquierda. Como la pista esta duplicada, mover -50% es un bucle perfecto.
+   Para invertir el sentido, cambiar a: from { -50% } to { 0 } */
+@keyframes clientesScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ====== LOGOS UNIFORMES EN BLANCO Y NEGRO ====== */
+.cliente-logo {
+  flex: 0 0 auto;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo clickeable: reset de estilos de boton */
+.cliente-logo--btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cliente-logo img {
+  height: 90px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cliente-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 860px) {
+  .clientes-inner {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .clientes-text {
+    max-width: none;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .clientes-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ====== LIGHTBOX ====== */
+.clientes-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(1, 7, 19, 0.85);
+  animation: clientesLbFade 0.25s ease forwards;
+}
+
+.clientes-lightbox-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2.4rem 2.6rem;
+  background: #111D35;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  animation: clientesLbPop 0.28s ease forwards;
+}
+
+.clientes-lightbox-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #c7d4e8;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.clientes-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.clientes-lightbox-img {
+  width: auto;
+  height: auto;
+  max-width: 260px;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+.clientes-lightbox-nombre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+@keyframes clientesLbFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes clientesLbPop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ====== ACCESIBILIDAD ====== */
+@media (prefers-reduced-motion: reduce) {
+  .clientes-track {
+    animation: none;
+  }
+
+  .clientes-lightbox,
+  .clientes-lightbox-panel {
+    animation: none;
+  }
+}

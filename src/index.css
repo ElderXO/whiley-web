@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   background-color: #010713;
+  overflow-x: hidden;
+  max-width: 100%;
 }

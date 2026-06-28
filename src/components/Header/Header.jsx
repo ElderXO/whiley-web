@@ -56,8 +56,9 @@ function Header() {
 
       <div className="header-right">
         <Link to="/soporte#contacto" className="btn-contact">
-  PONERSE EN CONTACTO
-</Link>
+          <span className="btn-contact-full">PONERSE EN CONTACTO</span>
+          <span className="btn-contact-short">CONTACTO</span>
+        </Link>
       </div>
     </header>
   )

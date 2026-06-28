@@ -90,6 +90,10 @@
   max-width: 600px;
 }
 
+.hero-actions {
+  max-width: 600px;
+}
+
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -223,21 +227,44 @@
     min-height: 500px;
     height: auto;
     align-items: center;
+    flex-direction: column;
   }
 
+  /* Disuelve el contenedor para poder intercalar la imagen entre el texto y los botones */
+  .hero-content {
+    display: contents;
+  }
+
+  .hero-text { order: 1; }
+  .hero-image-wrapper { order: 2; }
+  .hero-actions { order: 3; width: 100%; max-width: none; }
+
   .hero-image-wrapper {
-    width: 100%;
+    width: 200%;
+    max-width: none;
     position: relative;
-    transform: none;
+    transform: translate(-37%, -20px);
     top: auto;
     right: auto;
-    margin: 0 auto;
+    margin: 0 auto 0.5rem;
   }
   .hero-trust {
+  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 0.85rem;
+  max-width: 100%;
 }
+
+  .trust-item {
+    padding: 0;
+  }
+
+  .trust-item:not(:last-child)::after {
+    display: none;
+  }
 
   .hero-text {
     text-align: center;

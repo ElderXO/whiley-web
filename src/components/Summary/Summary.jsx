@@ -81,7 +81,7 @@ function Summary() {
   }
 
   return (
-    <section className="summary-section">
+    <section className="summary-section" id="servicios">
       <div className="summary-header">
         <span className="summary-eyebrow">RESUMEN EJECUTIVO</span>
         <h2 className="summary-title">

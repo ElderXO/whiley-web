@@ -1,4 +1,5 @@
 import { Check, Clock, Calendar } from 'lucide-react'
+import { openWhatsApp } from '../../utils/whatsapp'
 import heroBg from '../../assets/hero-bg.png'
 import logoImg from '../../assets/logo.png'
 import './Hero.css'
@@ -25,13 +26,15 @@ function Hero() {
           <p className="hero-subtitle">
             Infraestructura, datos y software para operaciones críticas.
           </p>
+        </div>
 
+        <div className="hero-actions">
           <div className="hero-buttons">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" onClick={() => openWhatsApp('51920335420', 'Hola, quiero agendar un diagnostico para mi empresa.')}>
               Agendar diagnóstico
               <span className="btn-arrow">→</span>
             </button>
-            <button className="btn btn-secondary">
+            <button className="btn btn-secondary" onClick={() => { const el = document.getElementById('servicios'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}>
               Ver soluciones
               <span className="btn-arrow">→</span>
             </button>
